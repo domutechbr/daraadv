@@ -55,8 +55,6 @@ body {
   min-height: 100vh;
   line-height: 1.6;
   font-weight: 300;
-  overflow-x: hidden;
-  width: 100%;
 }
 
 /* Scrollbar Customizada (Estilo Premium) */
