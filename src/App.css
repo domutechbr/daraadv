@@ -884,19 +884,7 @@
   }
 }
 
-@media (max-width: 768px) {
-  .navbar-links {
-    display: none;
-  }
-  
-  .navbar-cta-desktop {
-    display: none;
-  }
-  
-  .navbar-mobile-toggle {
-    display: block;
-  }
-  
+@media (max-width: 1150px) {
   .hero-section {
     flex-direction: column;
     height: auto;
@@ -966,6 +954,20 @@
   .hero-actions .btn-wine,
   .hero-actions .btn-outline {
     width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+  }
+  
+  .navbar-cta-desktop {
+    display: none;
+  }
+  
+  .navbar-mobile-toggle {
+    display: block;
   }
   
   .footer-inner {
