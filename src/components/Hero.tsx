@@ -64,10 +64,10 @@ export default function Hero() {
 
             {/* CTA Buttons Container */}
             <motion.div variants={itemVariants} className="hero-actions">
-              <a href="#contato" className="btn-wine font-semibold">
+              <a href="#/contato" className="btn-wine font-semibold">
                 Agendar Atendimento
               </a>
-              <a href="#atuacao" className="btn-outline font-semibold">
+              <a href="#/atuacao" className="btn-outline font-semibold">
                 <span>Ver Áreas</span>
                 <ArrowRight size={16} className="btn-arrow" />
               </a>

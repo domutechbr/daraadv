@@ -17,9 +17,9 @@ export default function Footer() {
       <div className="container footer-inner">
         {/* Column 1: Brand Info */}
         <div className="footer-col brand-col">
-          <div className="footer-logo">
+          <a href="#/" className="footer-logo">
             <img src={logoSvg} alt="Dara Vitória" height="48" className="footer-logo-svg" />
-          </div>
+          </a>
           <p className="footer-brand-desc">
             Advocacia e consultoria jurídica com atendimento personalizado, atuação técnica e foco em orientação segura, preventiva e estratégica.
           </p>
@@ -34,11 +34,11 @@ export default function Footer() {
         <div className="footer-col">
           <h4 className="footer-heading">Áreas de Atuação</h4>
           <ul className="footer-links-list">
-            <li><a href="#atuacao">Cível</a></li>
-            <li><a href="#atuacao">Empresarial</a></li>
-            <li><a href="#atuacao">Contratual</a></li>
-            <li><a href="#atuacao">Digital</a></li>
-            <li><a href="#atuacao">Trabalhista</a></li>
+            <li><a href="#/atuacao">Cível</a></li>
+            <li><a href="#/atuacao">Empresarial</a></li>
+            <li><a href="#/atuacao">Contratual</a></li>
+            <li><a href="#/atuacao">Digital</a></li>
+            <li><a href="#/atuacao">Trabalhista</a></li>
           </ul>
         </div>
 
@@ -122,9 +122,9 @@ export default function Footer() {
         <div className="copyright-group">
           <span>&copy; {currentYear} Dara Vitória Advocacia. Todos os direitos reservados.</span>
           <div className="bottom-policies">
-            <a href="#privacidade">Políticas de Privacidade</a>
+            <a href="#/privacidade">Políticas de Privacidade</a>
             <span className="dot-sep">•</span>
-            <a href="#termos">Termos de Uso</a>
+            <a href="#/termos">Termos de Uso</a>
           </div>
         </div>
 

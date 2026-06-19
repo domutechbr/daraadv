@@ -305,7 +305,7 @@ export default function PracticeAreas() {
             <p className="banner-desc">Converse com a Dra. Dara Vitória para entender seu caso e receber uma análise inicial com sigilo profissional.</p>
           </div>
           <div className="banner-action">
-            <a href="#contato" className="btn-gold banner-btn">
+            <a href="#/contato" className="btn-gold banner-btn">
               <span>Agendar Atendimento</span>
             </a>
           </div>
@@ -362,7 +362,7 @@ export default function PracticeAreas() {
                 </ul>
 
                 <div className="modal-cta-row">
-                  <a href="#contato" className="btn-gold" onClick={() => setSelectedArea(null)}>
+                  <a href="#/contato" className="btn-gold" onClick={() => setSelectedArea(null)}>
                     <span>Agendar Atendimento</span>
                   </a>
                 </div>

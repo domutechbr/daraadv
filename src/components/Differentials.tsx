@@ -103,7 +103,7 @@ export default function Differentials() {
                   </p>
 
                   <div className="diff-card-footer-cta">
-                    <a href="#contato" className="btn-gold-nav btn-gold">
+                    <a href="#/contato" className="btn-gold-nav btn-gold">
                       <span>Agendar Consulta</span>
                     </a>
                   </div>

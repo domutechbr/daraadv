@@ -116,6 +116,21 @@
   border-bottom: 1px solid var(--border-wine);
   overflow: hidden;
   box-shadow: var(--shadow-premium);
+  z-index: 1001; /* Ensure the drawer sits above the overlay */
+}
+
+/* Mobile Drawer Overlay Backdrop */
+.navbar-mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(3, 3, 3, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 998;
+  pointer-events: auto;
 }
 
 .mobile-drawer-inner {
@@ -882,6 +897,13 @@
     display: block;
   }
   
+  .hero-section {
+    flex-direction: column;
+    height: auto;
+    min-height: auto;
+    padding-bottom: 0;
+  }
+
   .hero-grid {
     grid-template-columns: 1fr;
     gap: 3.5rem;

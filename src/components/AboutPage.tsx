@@ -135,7 +135,7 @@ export default function AboutPage() {
             <span className="commitment-signature">— Dra. Dara Vitória</span>
           </div>
           <div className="commitment-action">
-            <a href="#contato" className="btn-gold">
+            <a href="#/contato" className="btn-gold">
               <span>Agendar Atendimento</span>
             </a>
           </div>

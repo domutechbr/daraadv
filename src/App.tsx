@@ -21,15 +21,47 @@ export default function App() {
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash;
+      let targetPage: 'home' | 'sobre' | 'contato' = 'home';
+      let targetAnchor = '';
+
       if (hash === '#/sobre') {
-        setCurrentPage('sobre');
+        targetPage = 'sobre';
       } else if (hash === '#/contato') {
-        setCurrentPage('contato');
+        targetPage = 'contato';
       } else {
-        setCurrentPage('home');
+        targetPage = 'home';
+        if (hash === '#/atuacao') {
+          targetAnchor = 'atuacao';
+        } else if (hash === '#/diferenciais') {
+          targetAnchor = 'diferenciais';
+        } else if (hash === '#/inicio' || hash === '#/') {
+          targetAnchor = 'inicio';
+        }
       }
-      window.scrollTo(0, 0);
+
+      setCurrentPage(targetPage);
+
+      if (targetPage !== 'home') {
+        window.scrollTo(0, 0);
+      } else {
+        if (targetAnchor) {
+          // Deferred execution ensures the homepage elements have rendered in the DOM
+          setTimeout(() => {
+            const element = document.getElementById(targetAnchor);
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+          }, 120);
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }
     };
+
+    // Run once on load to support initial deep links
+    handleHashChange();
 
     window.addEventListener('hashchange', handleHashChange);
     return () => window.removeEventListener('hashchange', handleHashChange);
