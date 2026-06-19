@@ -950,15 +950,15 @@
 
 @media (max-width: 1024px) {
   .navbar-links {
-    display: none;
+    display: none !important;
   }
   
   .navbar-cta-desktop {
-    display: none;
+    display: none !important;
   }
   
   .navbar-mobile-toggle {
-    display: block;
+    display: block !important;
   }
   
   .footer-inner {
