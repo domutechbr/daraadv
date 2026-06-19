@@ -1,0 +1,261 @@
+:root {
+  /* Cores Principais - Paleta Vinho & Champagne Gold (Suavizada) */
+  --bg-dark: #070707;          /* Preto neutro profundo de alta fidelidade */
+  --bg-dark-card: #0F0F10;     /* Fundo de card preto/carvão neutro */
+  --bg-glass: rgba(7, 7, 7, 0.78); /* Vidro fosco escuro neutro */
+  --primary-wine: #5c111c;     /* Vinho imperial */
+  --primary-wine-hover: #731724;
+  --primary-wine-light: #942534;
+  
+  --accent-gold: #c5a880;      /* Champagne Gold elegante e fosco */
+  --accent-gold-hover: #d4bc9a;
+  --accent-gold-light: #e6d3bb;
+  --accent-gold-glow: rgba(197, 168, 128, 0.2);
+  
+  --text-white: #ffffff;
+  --text-light: #f5f0f1;
+  --text-muted: #a39597;
+  
+  --border-wine: rgba(92, 17, 28, 0.16); /* Borda vinho mais suave */
+  --border-gold: rgba(197, 168, 128, 0.12);
+  --border-gold-hover: rgba(197, 168, 128, 0.3);
+
+  /* Tipografia */
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+
+  /* Transições e Efeitos */
+  --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.2s ease;
+  --shadow-premium: 0 10px 30px -10px rgba(0, 0, 0, 0.7);
+  --shadow-gold: 0 0 25px rgba(197, 168, 128, 0.1);
+
+  font-size: 16px;
+  color-scheme: dark;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reset e Estrutura Global */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+/* Scrollbar Customizada (Estilo Premium) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary-wine);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-gold);
+}
+
+/* Base de Elementos */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+button, input, textarea {
+  font-family: inherit;
+}
+
+/* Títulos Cinematográficos */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: var(--text-white);
+}
+
+/* Efeito de Vidro (Glassmorphism) */
+.glass-effect {
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-gold);
+}
+
+/* Botões Premium */
+.btn-gold {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 2rem;
+  background-color: transparent;
+  color: var(--accent-gold);
+  border: 1px solid var(--accent-gold);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+  z-index: 1;
+}
+
+.btn-gold::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: var(--accent-gold);
+  z-index: -1;
+  transition: var(--transition-smooth);
+}
+
+.btn-gold:hover {
+  color: var(--bg-dark);
+  box-shadow: 0 0 20px rgba(197, 168, 128, 0.3);
+}
+
+.btn-gold:hover::before {
+  width: 100%;
+}
+
+.btn-wine {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 2rem;
+  background-color: var(--primary-wine);
+  color: var(--text-white);
+  border: 1px solid var(--primary-wine);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+  z-index: 1;
+}
+
+.btn-wine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: var(--primary-wine-hover);
+  z-index: -1;
+  transition: var(--transition-smooth);
+}
+
+.btn-wine:hover {
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 20px rgba(92, 17, 28, 0.4);
+}
+
+.btn-wine:hover::before {
+  width: 100%;
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 2rem;
+  background-color: transparent;
+  color: var(--text-white);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-outline:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+  background-color: rgba(197, 168, 128, 0.05);
+}
+
+/* Iluminação e Detalhes de Luz de Fundo (Glows) */
+.ambient-glow-wine {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(92, 17, 28, 0.11) 0%, rgba(0, 0, 0, 0) 70%); /* Opacidade reduzida */
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ambient-glow-gold {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(197, 168, 128, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Classes Utilitárias */
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+.gold-text-gradient {
+  background: linear-gradient(135deg, var(--text-white) 30%, var(--accent-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.wine-text-gradient {
+  background: linear-gradient(135deg, var(--text-white) 40%, var(--primary-wine-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
