@@ -5,10 +5,10 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  right: 0;
   z-index: 1000;
   padding: 1.5rem 0;
-  transition: var(--transition-smooth);
+  transition: padding 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   border-bottom: 1px solid transparent;
 }
 
@@ -31,6 +31,7 @@
 .navbar-logo-wrapper {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .navbar-logo-svg {
@@ -64,6 +65,10 @@
 .nav-link:hover {
   color: var(--accent-gold);
   text-shadow: 0 0 10px rgba(197, 168, 128, 0.6), 0 0 20px rgba(197, 168, 128, 0.25);
+}
+
+.navbar-cta-desktop {
+  flex-shrink: 0;
 }
 
 /* CTA Navbar */
@@ -104,6 +109,12 @@
   border: none;
   color: var(--text-white);
   cursor: pointer;
+  flex-shrink: 0;
+}
+
+.navbar-mobile-toggle svg {
+  display: block;
+  stroke: currentColor;
 }
 
 /* Mobile Drawer */
@@ -187,7 +198,10 @@
 .hero-section::before {
   content: '';
   position: absolute;
-  inset: -12%;
+  left: 0;
+  right: 0;
+  top: -12%;
+  bottom: -12%;
   background:
     radial-gradient(ellipse at 72% 34%, rgba(255, 234, 214, 0.16) 0%, rgba(255, 234, 214, 0) 30%),
     radial-gradient(ellipse at 68% 56%, rgba(197, 168, 128, 0.08) 0%, rgba(197, 168, 128, 0) 38%),
