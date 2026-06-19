@@ -2446,3 +2446,115 @@
   mix-blend-mode: screen;
   pointer-events: none;
 }
+
+/* ==========================================================================
+   EXTRA SMALL MOBILE SCREENS DEEP POLISH (width <= 480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+  /* Global / Container spacings */
+  .container {
+    padding: 0 1.25rem;
+  }
+  
+  /* Titles size reductions to prevent awkward line wraps */
+  .hero-title {
+    font-size: 2.25rem !important;
+  }
+  .about-hero-title, 
+  .contact-hero-title,
+  .diff-editorial-title {
+    font-size: 2.1rem !important;
+  }
+  .section-title {
+    font-size: 2.2rem !important;
+  }
+  .about-bio-section-title,
+  .diff-display-title,
+  .modal-title {
+    font-size: 1.7rem !important;
+  }
+  
+  /* Hero spacing adjustments */
+  .hero-section {
+    padding-top: 110px;
+    padding-bottom: 2rem;
+  }
+  .hero-badge {
+    margin-bottom: 1.5rem;
+    padding: 0.4rem 1rem;
+  }
+  .hero-description {
+    font-size: 0.92rem;
+    margin-bottom: 1.75rem;
+  }
+  
+  /* Practice areas cards & modal adjustments */
+  .practice-card {
+    padding: 2rem 1.25rem !important;
+  }
+  .practice-card-title {
+    font-size: 1.5rem !important;
+  }
+  .practice-card-desc {
+    font-size: 0.88rem;
+  }
+  
+  .modal-wrapper {
+    max-height: 90vh;
+  }
+  .modal-content-col {
+    padding: 2.5rem 1.25rem 2rem !important;
+  }
+  .modal-close-btn {
+    top: 1rem;
+    right: 1rem;
+    width: 32px;
+    height: 32px;
+  }
+  .modal-cta-row {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .modal-cta-row .btn-gold,
+  .modal-cta-row .btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Differentials mobile tweaks */
+  .diff-display-card {
+    padding: 2.25rem 1.25rem !important;
+  }
+  .diff-display-desc {
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+  .diff-display-detail {
+    font-size: 0.85rem;
+    margin-bottom: 2rem;
+  }
+  .diff-menu-item {
+    padding: 1rem 1rem !important;
+    gap: 1rem !important;
+  }
+  
+  /* Timeline card spacing in biography */
+  .timeline-card {
+    padding: 2rem 1.25rem !important;
+  }
+  
+  /* Form row grids (Contact form) */
+  .form-row-grid {
+    gap: 1.25rem !important;
+  }
+  .contact-form-wrapper {
+    padding: 2.25rem 1.25rem !important;
+  }
+  
+  /* Spacings between landing sections */
+  .practice-areas-section,
+  .about-summary-section,
+  .differentials-section {
+    padding: 80px 0;
+  }
+}
