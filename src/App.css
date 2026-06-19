@@ -873,9 +873,31 @@
   }
 }
 
+@media (max-width: 1150px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+  .hero-description {
+    font-size: 1rem;
+    max-width: min(520px, 100%);
+    margin-bottom: 2rem;
+  }
+  .hero-image-side {
+    width: 36%;
+  }
+}
+
 @media (max-width: 1024px) {
   .navbar-links {
-    gap: 1.5rem;
+    display: none;
+  }
+  
+  .navbar-cta-desktop {
+    display: none;
+  }
+  
+  .navbar-mobile-toggle {
+    display: block;
   }
   
   .footer-inner {
@@ -884,7 +906,7 @@
   }
 }
 
-@media (max-width: 1150px) {
+@media (max-width: 768px) {
   .hero-section {
     flex-direction: column;
     height: auto;
@@ -954,20 +976,6 @@
   .hero-actions .btn-wine,
   .hero-actions .btn-outline {
     width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .navbar-links {
-    display: none;
-  }
-  
-  .navbar-cta-desktop {
-    display: none;
-  }
-  
-  .navbar-mobile-toggle {
-    display: block;
   }
   
   .footer-inner {
