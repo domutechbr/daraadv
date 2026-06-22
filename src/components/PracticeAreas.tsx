@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Landmark, Briefcase, FileSignature, ArrowRight, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import CivelIllustration from './CivelIllustration';
@@ -313,64 +314,67 @@ export default function PracticeAreas() {
       </div>
 
       {/* Details Modal */}
-      <AnimatePresence>
-        {selectedArea !== null && (
-          <motion.div 
-            className="modal-backdrop"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setSelectedArea(null)}
-          >
+      {createPortal(
+        <AnimatePresence>
+          {selectedArea !== null && (
             <motion.div 
-              className="modal-wrapper"
-              initial={{ scale: 0.92, y: 20, opacity: 0 }}
-              animate={{ scale: 1, y: 0, opacity: 1 }}
-              exit={{ scale: 0.92, y: 20, opacity: 0 }}
-              transition={{ type: 'spring', damping: 25, stiffness: 220 }}
-              onClick={(e) => e.stopPropagation()}
+              className="modal-backdrop"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedArea(null)}
             >
-              {/* Close Button */}
-              <button className="modal-close-btn" onClick={() => setSelectedArea(null)} aria-label="Fechar">
-                <X size={18} />
-              </button>
+              <motion.div 
+                className="modal-wrapper"
+                initial={{ scale: 0.92, y: 20, opacity: 0 }}
+                animate={{ scale: 1, y: 0, opacity: 1 }}
+                exit={{ scale: 0.92, y: 20, opacity: 0 }}
+                transition={{ type: 'spring', damping: 25, stiffness: 220 }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                {/* Close Button */}
+                <button className="modal-close-btn" onClick={() => setSelectedArea(null)} aria-label="Fechar">
+                  <X size={18} />
+                </button>
 
-              {/* Illustration Column */}
-              <div className="modal-illustration-col">
-                {selectedArea.title === 'Cível' && <CivelIllustration animate="visible" />}
-                {selectedArea.title === 'Empresarial' && <EmpresarialIllustration animate="visible" />}
-                {selectedArea.title === 'Contratual' && <ContratualIllustration animate="visible" />}
-                {selectedArea.title === 'Digital' && <DigitalIllustration animate="visible" />}
-                {selectedArea.title === 'Trabalhista' && <TrabalhistaIllustration animate="visible" />}
-              </div>
-
-              {/* Content Column */}
-              <div className="modal-content-col">
-                <span className="modal-subtitle">{selectedArea.subtitle}</span>
-                <h3 className="modal-title">{selectedArea.details.title}</h3>
-                <div className="modal-divider"></div>
-                <p className="modal-overview">{selectedArea.details.overview}</p>
-
-                <h4 className="modal-list-title">Serviços Especializados</h4>
-                <ul className="modal-services-list">
-                  {selectedArea.details.services.map((service: string, i: number) => (
-                    <li key={i} className="modal-service-item">
-                      <span className="modal-bullet">•</span>
-                      <span>{service}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="modal-cta-row">
-                  <a href="#/contato" className="btn-gold" onClick={() => setSelectedArea(null)}>
-                    <span>Agendar Atendimento</span>
-                  </a>
+                {/* Illustration Column */}
+                <div className="modal-illustration-col">
+                  {selectedArea.title === 'Cível' && <CivelIllustration animate="visible" />}
+                  {selectedArea.title === 'Empresarial' && <EmpresarialIllustration animate="visible" />}
+                  {selectedArea.title === 'Contratual' && <ContratualIllustration animate="visible" />}
+                  {selectedArea.title === 'Digital' && <DigitalIllustration animate="visible" />}
+                  {selectedArea.title === 'Trabalhista' && <TrabalhistaIllustration animate="visible" />}
                 </div>
-              </div>
+
+                {/* Content Column */}
+                <div className="modal-content-col">
+                  <span className="modal-subtitle">{selectedArea.subtitle}</span>
+                  <h3 className="modal-title">{selectedArea.details.title}</h3>
+                  <div className="modal-divider"></div>
+                  <p className="modal-overview">{selectedArea.details.overview}</p>
+
+                  <h4 className="modal-list-title">Serviços Especializados</h4>
+                  <ul className="modal-services-list">
+                    {selectedArea.details.services.map((service: string, i: number) => (
+                      <li key={i} className="modal-service-item">
+                        <span className="modal-bullet">•</span>
+                        <span>{service}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="modal-cta-row">
+                    <a href="#/contato" className="btn-gold" onClick={() => setSelectedArea(null)}>
+                      <span>Agendar Atendimento</span>
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
             </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
     </section>
   );
 }
